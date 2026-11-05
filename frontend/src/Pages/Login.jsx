@@ -97,7 +97,7 @@ export default function Login() {
                         <button 
                             type="submit"
                             disabled={loading}
-                            className={`w-full cursor-pointer flex flex-col py-2.5 pr-2 text-center text-white border border-gray-300 rounded text-[14px] transition-all duration-200 ease-in ${
+                            className={`w-full cursor-pointer flex flex-col py-2.5 pr-2 text-center text-white border border-gray-300 rounded text-[16px] font-bold transition-all duration-200 ease-in ${
                                 loading ? "bg-gray-600 cursor-not-allowed" : "bg-black hover:bg-gray-300 hover:text-gray-900"
                             }`}
                         >
@@ -114,7 +114,7 @@ export default function Login() {
                             <Link to="https://google.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full py-2.5 pl-2 text-center text-gray-900 border-2 border-gray-300 rounded bg-white hover:bg-gray-300 hover:text-gray-900 text-[14px] transition-all duration-200 ease-in">
+                                className="w-full py-2.5 pl-2 text-center text-gray-900 border-2 border-gray-300 rounded bg-white hover:bg-gray-300 hover:text-gray-900 text-[16px] font-bold transition-all duration-200 ease-in">
                                 Login with Google
                             </Link>
                         </div>
@@ -123,7 +123,7 @@ export default function Login() {
                             <Link to="https://apple.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full py-2.5 text-center text-white border border-gray-300 rounded bg-black hover:bg-gray-300 hover:text-gray-900 text-[14px] transition-all duration-200 ease-in">
+                                className="w-full py-2.5 text-center text-white border border-gray-300 rounded bg-black hover:bg-gray-300 hover:text-gray-900 text-[16px] font-bold transition-all duration-200 ease-in">
                                 Login with Apple
                             </Link>
                         </div>
