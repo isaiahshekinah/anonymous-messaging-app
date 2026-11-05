@@ -204,7 +204,7 @@ app.get("/messages", authenticator, async (req, res) => {
 app.get("/mylink", authenticator, (req, res) => {
     const username = req.user.username;
 
-    const link = `http://localhost:5173/${username}`;
+    const link = `https://anonymously-mine.vercel.app/${username}`;
 
     return res.status(200).json({
         message: "Link generated successfully",
