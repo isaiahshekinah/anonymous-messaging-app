@@ -138,7 +138,7 @@ app.post ("/login", async (req, res) => {
         })
     })
 
-    app.post("/message", async (req, res) => {
+    app.post("/messages", async (req, res) => {
         try {
 
             const {username, content} = req.body;
@@ -181,7 +181,7 @@ app.post ("/login", async (req, res) => {
         }
     })
 
-app.get("/message", authenticator, async (req, res) => {
+app.get("/messages", authenticator, async (req, res) => {
     try {
         const userId = req.user.id;
 
