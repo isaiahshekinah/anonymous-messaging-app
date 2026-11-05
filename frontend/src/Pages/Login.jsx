@@ -47,7 +47,7 @@ export default function Login() {
 
     <nav className="bg-gray-100 ">
 
-        <ul class="flex items-center gap-6 text-[15px]">
+        <ul className="flex items-center gap-6 text-[15px]">
          
             <li className="bg-black text-white text-[14px] px-6 py-2 rounded-md hover:bg-gray-300 hover:text-black transition-all duration-300 ease-in font-bold"><a href="#">Sign up</a></li>
         </ul>

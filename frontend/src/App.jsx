@@ -5,7 +5,6 @@ import AuthGuard from "./components/AuthGuard";
 import MessagePage from "./Pages/MessagePage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import UserContextProvider from "./context/UserContext";
-import Messages from "./Pages/MessagePage";
  
 
 export default function App() {

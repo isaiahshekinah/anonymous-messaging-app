@@ -9,6 +9,7 @@ export default function UserContextProvider({children}) {
     const [UserInfo, setUserInfo] = useState({});
 
     const [token, setToken] = useState("");
+    
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -35,7 +36,7 @@ export default function UserContextProvider({children}) {
     }, []);
 
     async function login(usernameOrEmail, password) {
-        const res = await fetch("http://localhost:3000/login", {
+        const res = await fetch("https://anonymously-yours.vercel.app/login", {
 
             method: "POST",
             headers: {
