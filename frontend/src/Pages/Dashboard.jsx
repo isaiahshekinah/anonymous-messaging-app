@@ -15,7 +15,7 @@ export default function Dashboard() {
   useEffect(() => {
     async function getLink() {
       try {
-        const res = await fetch("http://localhost:3000/mylink", {
+        const res = await fetch("https://anonymously-mine.vercel.app/mylink", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -45,7 +45,7 @@ export default function Dashboard() {
         setMessagesLoading(true);
         setMessagesError("");
 
-        const res = await fetch("http://localhost:3000/message", {
+        const res = await fetch("https://anonymously-mine.vercel.app/messages", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
