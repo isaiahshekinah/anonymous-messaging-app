@@ -3,14 +3,19 @@ import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
-  const { token, logout } = useUserContext();
+  const { token, logout, UserInfo } = useUserContext();
   const [messageLink, setMessageLink] = useState("");
   const [error, setError] = useState("");
   const [messages, setMessages] = useState([]);
   const [messagesError, setMessagesError] = useState("");
   const [messagesLoading, setMessagesLoading] = useState(true);
+  
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const navigate = useNavigate();
+
+
+
 
   useEffect(() => {
     async function getLink() {
@@ -71,17 +76,39 @@ export default function Dashboard() {
     }
   }, [token]);
 
-
   function handleLogout() {
-  logout();
-  navigate("/login", { replace: true });
-}
+    logout();
+    navigate("/login", { replace: true });
+  }
 
   return (
     <div className="min-h-screen bg-white flex text-gray-900 font-sans relative overflow-hidden">
-      <aside className="w-64 border-r border-gray-100 flex flex-col justify-between py-6 px-4 bg-white select-none">
+      
+    
+      {isSidebarOpen && (
+        <div 
+          onClick={() => setIsSidebarOpen(false)}
+          className="fixed inset-0 bg-black/20 z-40 md:hidden transition-opacity"
+        />
+      )}
+
+     
+      <aside className={`
+        fixed inset-y-0 left-0 z-50 w-64 border-r border-gray-100 bg-white flex flex-col justify-between py-6 px-4 select-none
+        transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0
+        ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+      `}>
         <div>
-          <div className="text-xl font-bold mb-6">Anonymous</div>
+          <div className="flex items-center justify-between mb-6">
+            <div className="text-xl font-bold">{UserInfo.username}</div>
+            
+            <button 
+              onClick={() => setIsSidebarOpen(false)}
+              className="md:hidden text-gray-500 hover:text-gray-900 p-1 rounded-lg"
+            >
+              ✕
+            </button>
+          </div>
 
           <nav className="space-y-1">
             <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-gray-50 font-semibold text-gray-900 transition-colors">
@@ -92,15 +119,33 @@ export default function Dashboard() {
 
         <div>
           <button 
-          onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-500 hover:bg-gray-50 hover:text-gray-900 font-medium transition-colors">
+            onClick={handleLogout}
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-500 hover:bg-gray-50 hover:text-gray-900 font-medium transition-colors"
+          >
             <span>Sign out</span>
           </button>
         </div>
       </aside>
 
-      <main className="flex-1 items-center justify-center min-h-screen p-8 lg:p-12 ">
-        <div className="md:100 lg:w-150 bg-white border border-gray-200 rounded-2xl px-9 py-8 shadow-sm">
+      <main className="flex-1 items-center justify-center min-h-screen p-8 lg:p-12 overflow-y-auto">
+        
+     
+        <div className="flex items-center justify-between mb-6 md:hidden">
+          <button 
+            onClick={() => setIsSidebarOpen(true)}
+            className="p-2 border border-gray-200 rounded-xl bg-white text-gray-700 hover:bg-gray-50 transition"
+            aria-label="Open Menu"
+          >
+          
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <span className="font-bold text-lg">Anonymous</span>
+          <div className="w-10"></div> 
+        </div>
+
+        <div className="w-full max-w-2xl bg-white border border-gray-200 rounded-2xl px-9 py-8 shadow-sm">
           <div className="flex items-start justify-between mb-5">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center border border-pink-100 shadow-inner">
@@ -110,13 +155,8 @@ export default function Dashboard() {
                 <h2 className="font-semibold text-gray-900 text-base">
                   Send me an anonymous confession
                 </h2>
-                <p className="text-xs text-gray-400 mt-0.5">{messageLink}</p>
+                <p className="text-xs text-gray-400 mt-0.5 break-all">{messageLink}</p>
               </div>
-            </div>
-
-            <div className="flex items-center gap-2 text-gray-400   ">
-              <button className="p-2 hover:text-gray-700 hover:bg-gray-50 rounded-lg transition"></button>
-              <button className="p-2 hover:text-red-600 hover:bg-red-50 rounded-lg transition"></button>
             </div>
           </div>
 
@@ -131,23 +171,14 @@ export default function Dashboard() {
                 }
               }}
               disabled={!messageLink}
-              className="flex items-center justify-center gap-2 bg-black text-white py-3 px-4 rounded-xl font-medium text-sm hover:bg-gray-800 transition shadow-sm"
+              className="flex items-center justify-center gap-2 bg-black text-white py-3 px-4 rounded-xl font-medium text-sm hover:bg-gray-800 transition shadow-sm cursor-pointer"
             >
               <span>Copy Link</span>
             </button>
             <button className="flex items-center justify-center gap-2 bg-gray-50 text-gray-900 border border-gray-200/60 py-3 px-4 rounded-xl font-medium text-sm hover:bg-gray-100 transition">
               <span>Share</span>
             </button>
-            {error && <p className="text-red-600">{error}</p>}
-          </div>
-
-          <div className="flex items-center justify-between pt-4 border-t border-gray-100 text-xs text-gray-500">
-            <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1.5"></span>
-              <span className="flex items-center gap-1.5"></span>
-            </div>
-
-            <button className="flex items-center gap-1.5 text-gray-600 hover:text-black font-medium transition"></button>
+            {error && <p className="text-red-600 sm:col-span-2">{error}</p>}
           </div>
         </div>
 
@@ -169,7 +200,7 @@ export default function Dashboard() {
               {messages.map((msg) => (
                 <div
                   key={msg.id}
-                  className="border border-gray-200 rounded-2xl p-5 shadow-sm"
+                  className="border border-gray-200 rounded-2xl p-5 shadow-sm bg-white"
                 >
                   <p className="text-gray-800 whitespace-pre-wrap">
                     {msg.content}
