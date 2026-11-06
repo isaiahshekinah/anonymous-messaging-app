@@ -155,7 +155,7 @@ export default function Dashboard() {
                 <span className="text-lg">💌</span>
               </div>
               <div>
-                <h2 className="font-semibold text-gray-900 text-base">
+                <h2 className="font-bold text-gray-900 text-[15px] md:text-base whitespace-nowrap">
                   Send me an anonymous confession
                 </h2>
                 <p className="text-xs text-gray-400 mt-0.5 break-all">{messageLink}</p>
@@ -205,7 +205,7 @@ export default function Dashboard() {
                   key={msg.id}
                   className="border border-gray-200 rounded-2xl p-5 shadow-sm bg-white"
                 >
-                  <p className="text-gray-800 whitespace-pre-wrap">
+                  <p className="text-gray-900 font-semibold wrap-break-word">
                     {msg.content}
                   </p>
 

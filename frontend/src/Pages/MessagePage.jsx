@@ -75,12 +75,12 @@ export default function Messages() {
       </header>
 
       <form onSubmit={handleSubmit}>
-        <div className="min-h-150 bg-gray-100 flex flex-col items-center justify-center px-4 font-sans">
+        <div className="md:min-h-150 min-h-120 bg-gray-100 flex flex-col items-center justify-center px-4 font-sans">
           <div className="w-full max-w-lg bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
             <div className="flex items-center border-b border-gray-100 pb-4">
-              <div className="flex items-center gap-2">
-                <span className="text-xl">💌</span>
-                <span className="font-semibold text-gray-900 text-md">
+              <div className="flex items-center justify-center gap-2">
+                <span className="md:text-2xl text-xl">💌</span>
+                <span className="font-bold text-gray-900 md:text-[17px] text-[15px]">
                   Send me an anonymous confession to {username}
                 </span>
               </div>
