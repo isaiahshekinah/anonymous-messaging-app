@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { InboxIcon } from "lucide-react";
 
 export default function Dashboard() {
   const { token, logout, UserInfo } = useUserContext();
@@ -13,6 +14,7 @@ export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const navigate = useNavigate();
+
 
 
 
@@ -100,7 +102,7 @@ export default function Dashboard() {
       `}>
         <div>
           <div className="flex items-center justify-between mb-6">
-            <div className="text-xl font-bold">{UserInfo.username}</div>
+            <div className="text-xl font-bold">{UserInfo.username.charAt(0).toUpperCase() + UserInfo.username.slice(1)}</div>
             
             <button 
               onClick={() => setIsSidebarOpen(false)}
@@ -112,7 +114,8 @@ export default function Dashboard() {
 
           <nav className="space-y-1">
             <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-gray-50 font-semibold text-gray-900 transition-colors">
-              <span>Inbox</span>
+              <InboxIcon className="w-5 text-black"/>
+              <span className="font-bold">Inbox</span>
             </div>
           </nav>
         </div>
