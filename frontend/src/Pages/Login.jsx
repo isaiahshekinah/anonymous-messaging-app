@@ -44,7 +44,7 @@ export default function Login() {
 
   return (
     <div>
-      <header className="flex items-center justify-between py-6 px-9">
+      <header className="flex items-center justify-between py-6 md:px-9 px-4">
         <div className="flex items-center gap-1 font-extrabold md:text-[24px] text-[18px]">
           <div className="w-6 h-6">
             <img src="/anony.jpg" className="rounded" />
@@ -61,9 +61,9 @@ export default function Login() {
         </nav>
       </header>
 
-      <main className="w-full border-2 border-gray-200 shadow-lg max-w-xl p-8 pb-4 mt-10 mx-auto">
+      <main className="w-full md:border-2 border-gray-200 md:shadow-lg max-w-xl p-8 pb-4 md:mt-10 mx-auto">
         <form onSubmit={handleSubmit}>
-          <h1 className="text-center font-bold text-[24px] mb-9">
+          <h1 className="text-center font-bold md:text-[24px] text-[20px] mb-6">
             Login to your Anonymous account
           </h1>
 
