@@ -163,7 +163,7 @@ export default function Signup() {
                 </div>
 
                 <button 
-                type="button"
+                type="submit"
                 className="w-full cursor-pointer 
                 py-2.5 pr-2 text-center text-white border border-gray-300 rounded bg-black hover:bg-gray-300 hover:text-gray-900 text-[14px] font-bold transition-all duration-200 ease-in">
                     Sign Up

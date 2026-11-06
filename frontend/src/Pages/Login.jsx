@@ -95,7 +95,7 @@ export default function Login() {
                         </div>
 
                         <button 
-                            type="button"
+                            type="submit"
                             disabled={loading}
                             className={`w-full cursor-pointer py-2.5 pr-2  text-center text-white border border-gray-300 rounded text[14px] md:text-[16px] font-bold transition-all duration-200 ease-in ${
                                 loading ? "bg-gray-600 cursor-not-allowed" : "bg-black hover:bg-gray-300 hover:text-gray-900"
