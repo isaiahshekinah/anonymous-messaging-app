@@ -155,7 +155,7 @@ export default function Dashboard() {
                 <span className="text-lg">💌</span>
               </div>
               <div>
-                <h2 className="font-bold text-gray-900 text-[15px] md:text-base whitespace-nowrap">
+                <h2 className="font-bold text-gray-900 text-[15px] md:text-base">
                   Send me an anonymous confession
                 </h2>
                 <p className="text-xs text-gray-400 mt-0.5 break-all">{messageLink}</p>
