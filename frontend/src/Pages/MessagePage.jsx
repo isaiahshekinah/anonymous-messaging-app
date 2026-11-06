@@ -78,13 +78,13 @@ export default function Messages() {
         <div className="md:min-h-150 min-h-120 bg-gray-100 flex flex-col items-center justify-center px-4 font-sans">
           <div className="w-full max-w-lg bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
             <div className="flex items-center border-b border-gray-100 pb-4">
-              <div className="flex items-center justify-center gap-2">
-                <div className="w-4 h-4">
+              <div className="flex items-center justify-center gap-3">
+                <div className="w-6 h-6">
                   <img src="anony.jpg" className="rounded"/>
                 </div>
-                <span className="font-bold text-gray-900 md:text-[17px] text-[15px]">
+                <div className="font-bold text-gray-900 md:text-[17px] text-[15px]">
                   Send me an anonymous confession to {username}
-                </span>
+                </div>
               </div>
             </div>
 
@@ -94,7 +94,7 @@ export default function Messages() {
                 onChange={(event) => setContent(event.target.value)}
                 rows="4"
                 placeholder="Type your anonymous message here..."
-                className="w-full bg-gray-50 border border-gray-200/80 rounded-2xl p-4 text-md text-gray-900 focus:outline-none focus:ring-2 black focus:bg-white resize-none transition placeholder:text-lg"
+                className="w-full bg-gray-50 border border-gray-200/80 rounded-2xl p-4 text-md text-gray-900 focus:outline-none focus:ring-2 black focus:bg-white resize-none transition md:placeholder:text-lg"
                 maxLength={250}
                 required
               ></textarea>

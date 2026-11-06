@@ -151,21 +151,26 @@ export default function Dashboard() {
         <div className="w-full max-w-2xl bg-white border border-gray-200 rounded-2xl px-9 py-8 shadow-sm">
           <div className="flex items-start justify-between mb-5">
 
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center border border-pink-100 shadow-inner">
-                <div className="w-4 h-4">
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6">
                   <img src="anony.jpg" className="rounded"/>
                 </div>
-              </div>
 
-              <div>
+                <div>
                 <h2 className="font-bold text-gray-900 text-[15px] md:text-base">
                   Send me an anonymous confession
-                </h2>
-                <p className="text-xs text-gray-400 mt-0.5 break-all">{messageLink}</p>
+                </h2>  
               </div>
 
-            </div>
+              </div>
+
+              <div className="text-xs text-gray-400 ml-6 break-all">
+                {messageLink}
+              </div>
+
+              </div>
+
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
