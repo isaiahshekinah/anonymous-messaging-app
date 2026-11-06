@@ -44,13 +44,13 @@ export default function Login() {
     return (
         <div>
             <header className="flex items-center justify-between py-6 px-9">
-                <div className="font-extrabold text-[24px]">
+                <div className="font-extrabold md:text-[24px] text-[18px]">
                     ANONYMOUSLY
                 </div>
 
                 <nav className="bg-gray-100">
                     <ul className="flex items-center gap-6 text-[15px]">
-                        <li className="bg-black text-white text-[14px] px-6 py-2 rounded-md hover:bg-gray-300 hover:text-black transition-all duration-300 ease-in font-bold">
+                        <li className="bg-black text-white text-[14px] md:px-6 px-4 py-2 rounded-md hover:bg-gray-300 hover:text-black transition-all duration-300 ease-in font-bold">
                             <Link to="/signup">Sign up</Link>
                         </li>
                     </ul>
@@ -95,9 +95,9 @@ export default function Login() {
                         </div>
 
                         <button 
-                            type="submit"
+                            type="button"
                             disabled={loading}
-                            className={`w-full cursor-pointer flex flex-col py-2.5 pr-2 text-center text-white border border-gray-300 rounded text-[16px] font-bold transition-all duration-200 ease-in ${
+                            className={`w-full cursor-pointer py-2.5 pr-2  text-center text-white border border-gray-300 rounded text[14px] md:text-[16px] font-bold transition-all duration-200 ease-in ${
                                 loading ? "bg-gray-600 cursor-not-allowed" : "bg-black hover:bg-gray-300 hover:text-gray-900"
                             }`}
                         >

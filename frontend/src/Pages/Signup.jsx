@@ -84,7 +84,7 @@ export default function Signup() {
     return (
         <div>
             <header className="flex items-center justify-between py-6 px-9">
-        <div className="font-extrabold text-[24px]">
+        <div className="font-extrabold md:text-[24px] text-[18px]">
         ANONYMOUSLY
     </div>
 
@@ -163,9 +163,9 @@ export default function Signup() {
                 </div>
 
                 <button 
-                type="submit"
-                className="w-full cursor-pointer flex flex-col
-                py-2.5 pr-2 text-center text-white border border-gray-300 rounded bg-black hover:bg-gray-300 hover:text-gray-900 text-[14px] transition-all duration-200 ease-in">
+                type="button"
+                className="w-full cursor-pointer 
+                py-2.5 pr-2 text-center text-white border border-gray-300 rounded bg-black hover:bg-gray-300 hover:text-gray-900 text-[14px] font-bold transition-all duration-200 ease-in">
                     Sign Up
                 
             </button>
@@ -180,7 +180,7 @@ export default function Signup() {
                 <Link to="google.com"
                  target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 pl-2 text-center text-gray-900 border-2 border-gray-300 rounded bg-white  hover:bg-gray-300 hover:text-gray-900 text-[14px] transition-all duration-200 ease-in">
+                className="w-full py-2.5 pl-2 text-center text-gray-900 border-2 border-gray-300 rounded bg-white  hover:bg-gray-300 hover:text-gray-900 font-bold text-[14px] transition-all duration-200 ease-in">
                     Sign up with Google
                 </Link>
             </div>
@@ -189,7 +189,7 @@ export default function Signup() {
                 <Link to="apple.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 text-center text-white border border-gray-300 rounded bg-black hover:bg-gray-300 hover:text-gray-900 text-[14px] transition-all duration-200 ease-in">
+                className="w-full py-2.5 text-center text-white border border-gray-300 rounded bg-black hover:bg-gray-300 hover:text-gray-900 text-[14px] font-bold transition-all duration-200 ease-in">
                     Sign up with Apple
                 </Link>
             </div>
