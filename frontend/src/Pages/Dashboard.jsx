@@ -144,22 +144,27 @@ export default function Dashboard() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
-          <span className="font-bold text-lg">Anonymous</span>
+          <span className="font-bold text-lg">Anonymously Yours</span>
           <div className="w-10"></div> 
         </div>
 
         <div className="w-full max-w-2xl bg-white border border-gray-200 rounded-2xl px-9 py-8 shadow-sm">
           <div className="flex items-start justify-between mb-5">
+
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center border border-pink-100 shadow-inner">
-                <span className="text-lg">💌</span>
+              <div className="w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center border border-pink-100 shadow-inner">
+                <div className="w-4 h-4">
+                  <img src="anony.jpg" className="rounded"/>
+                </div>
               </div>
+
               <div>
                 <h2 className="font-bold text-gray-900 text-[15px] md:text-base">
                   Send me an anonymous confession
                 </h2>
                 <p className="text-xs text-gray-400 mt-0.5 break-all">{messageLink}</p>
               </div>
+
             </div>
           </div>
 

@@ -79,7 +79,9 @@ export default function Messages() {
           <div className="w-full max-w-lg bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
             <div className="flex items-center border-b border-gray-100 pb-4">
               <div className="flex items-center justify-center gap-2">
-                <span className="md:text-2xl text-xl">💌</span>
+                <div className="w-4 h-4">
+                  <img src="anony.jpg" className="rounded"/>
+                </div>
                 <span className="font-bold text-gray-900 md:text-[17px] text-[15px]">
                   Send me an anonymous confession to {username}
                 </span>
